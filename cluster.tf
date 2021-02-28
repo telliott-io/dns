@@ -1,6 +1,6 @@
-module "legacycluster" {
+module "cluster" {
   source   = "github.com/telliott-io/kube-clusters//digitalocean/data?ref=v0.7.0"
-  cluster_name = "prod-do-c"
+  cluster_name = "site1"
 }
 
 provider "kubernetes" {
@@ -22,6 +22,6 @@ data "kubernetes_service" "ingress_nginx" {
 }
 
 locals {
-    kubernetes = jsonencode(module.legacycluster.kubernetes)
+    kubernetes = jsonencode(module.cluster.kubernetes)
     ingress_ip = data.kubernetes_service.ingress_nginx.status.0.load_balancer.0.ingress.0.ip
 }
