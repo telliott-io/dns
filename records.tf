@@ -1,7 +1,7 @@
 resource "cloudflare_record" "ingress" {
   zone_id = var.cloudflare_zone_id
   name    = "ingress"
-  value   = var.ingress_ip
+  value   = local.ingress_ip
   type    = "A"
   ttl     = 1
   proxied = true
