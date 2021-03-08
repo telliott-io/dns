@@ -1,5 +1,5 @@
 module "cluster" {
-  source   = "github.com/telliott-io/kube-clusters//digitalocean/data?ref=v0.7.0"
+  source   = "github.com/telliott-io/kube-clusters//digitalocean/context?ref=v0.8.0"
   cluster_name = "site1"
 }
 
